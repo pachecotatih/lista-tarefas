@@ -30,6 +30,12 @@ h1 {
     text-align: center; 
     color: rgb(0, 136, 255); 
 }
+.data-list{
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    font-size: 12px;
+}
 .tarefa-item {
     position: relative;
     display: flex;
@@ -58,6 +64,11 @@ h1 {
     resize: none;
     display: flex;
     justify-content: center;
+}
+#data-input {
+    border: 1px solid #ccc;
+    font-size: 16px;
+    border-radius: 5px;
 }
 #app button {
     margin: 10px auto;
@@ -105,6 +116,18 @@ h1 {
 }
 .btn-editar:hover {
   color: blue;
+}
+.caixa-checkbox{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid rgb(0, 136, 255);
+    accent-color: rgb(0, 136, 255);
+    
 }
 
 @media (max-width: 480px) {
