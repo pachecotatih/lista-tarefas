@@ -17,7 +17,7 @@ function listarTarefas() {
         let tarefaText = document.createTextNode(tarefa);
 
         let linkElement = document.createElement("a");
-        linkElement.setAttribute("href", "#");
+        linkElement.setAttribute("href", "javascript:void(0)");
 
         let posicao = tarefas.indexOf(tarefa);
 

@@ -16,7 +16,7 @@ function listarTarefas() {
         element.setAttribute("class", "tarefa-item");
         let tarefaText = document.createTextNode(tarefa);
         let linkElement = document.createElement("a");
-        linkElement.setAttribute("href", "#");
+        linkElement.setAttribute("href", "javascript:void(0)");
         let posicao = tarefas.indexOf(tarefa);
         linkElement.setAttribute("onclick", `removerTarefa(${posicao})`);
         linkElement.setAttribute("class", "btn-remover");
