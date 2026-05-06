@@ -1,5 +1,10 @@
+@font-face {
+    font-family: "Comic Sans C";
+    src: url('/assets/fonts/COMIC.TTF') format('truetype');
+}
+
 body {
-    font-family:  "Comic Neue", "Comic Sans MS", cursive, sans-serif;
+    font-family: "Comic Sans C";
 }
 h1 {
     font-size: 25px;
@@ -29,7 +34,6 @@ h1 {
     font-size: 20px;
     text-align: center; 
     color: rgb(0, 136, 255); 
-    font-family: Comic Sans MS, cursive;
 }
 .tarefa-item {
     position: relative;
