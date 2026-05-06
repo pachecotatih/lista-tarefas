@@ -70,7 +70,7 @@ function adicionarTarefa() {
         return false;
     }
     else if (existeTarefa) {
-        alert("Esta tarefa já foi adicionada!");
+        alert("Já existe uma tarefa com esse nome e data!");
         return false;
     }
     else {
@@ -114,22 +114,33 @@ function editarTarefa(posicao) {
     buttonElement.setAttribute("onclick", `editarTarefaContent(${posicao})`);
 }
 function editarTarefaContent(posicao) {
+    let existeTarefa = tarefas.some(t => t.tarefa === inputTarefa.value && t.data === inputData.value);
     if (typeof tarefas[posicao] === "undefined")
         return;
-    tarefas[posicao].tarefa = inputTarefa.value;
-    tarefas[posicao].data = inputData.value;
-    inputTarefa.value = "";
-    if (dataMin) {
-        inputData.value = dataMin;
+    if (inputTarefa.value === "" || inputData.value === "") {
+        alert("Já existe uma tarefa com esse nome e data!");
+        return false;
+    }
+    else if (existeTarefa) {
+        alert("Esta tarefa já foi adicionada!");
+        return false;
     }
     else {
-        inputData.value = "";
+        tarefas[posicao].tarefa = inputTarefa.value;
+        tarefas[posicao].data = inputData.value;
+        inputTarefa.value = "";
+        if (dataMin) {
+            inputData.value = dataMin;
+        }
+        else {
+            inputData.value = "";
+        }
+        buttonElement.textContent = "Adicionar";
+        buttonElement.setAttribute("onclick", "adicionarTarefa()");
+        buttonElement.setAttribute("class", "btn-adicionar");
+        buttonElement.setAttribute("type", "button");
+        listarTarefas();
+        salvarDados();
     }
-    buttonElement.textContent = "Adicionar";
-    buttonElement.setAttribute("onclick", "adicionarTarefa()");
-    buttonElement.setAttribute("class", "btn-adicionar");
-    buttonElement.setAttribute("type", "button");
-    listarTarefas();
-    salvarDados();
 }
 //# sourceMappingURL=index.js.map
